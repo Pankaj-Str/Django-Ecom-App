@@ -1,0 +1,230 @@
+ <!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+            /* Style the dropdown button */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            
+            /* Style the dropdown content (hidden by default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: whitesmoke;
+                min-width: 160px;
+                box-shadow: 0 8px 16px 0 rgba(37, 241, 105, 0.2);
+                z-index: 1;
+            }
+            
+            /* Style the links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {
+                background-color:green;
+            }
+            
+            /* Show the dropdown menu on hover */
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 10px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 5px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 9px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color:green;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive design */
+@media screen and (max-width: 300px) {
+    .dropdown {
+        display: block;
+        text-align: center;
+    }
+    .dropdown-content {
+        display: none;
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+
+
+
+        </style>
+        <link rel="stylesheet" href="{% static 'css/index.css'%}">
+        <title>contact us</title>
+    </head>
+    <body>
+        
+       
+        <a href="logout.html">logout</a>
+
+      <header>
+          <div class="header-1">
+              <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>EFARM</a>
+
+              <form action="" class="search-box-container">
+                  <input type="search" id="search-box" placeholder="search-here....">
+                <label for="search-box" class="fas fa-search"></label>
+              </form>
+          </div>
+          
+          
+
+          <div class="header-2">
+              <div id="menu-bar" class="fas fa-bars"></div>
+
+
+              <nav class="navbar">
+                  <a href="#home" >home</a>
+
+                  <div class="dropdown">
+                  <a href="{%url 'category' %}">category</a>
+                  <div class="dropdown-content">
+                    <a href="#category1">Vegetables</a>
+                    <a href="#category2">Fruits</a>
+                    <a href="#category3">Chicken&Eggs</a>
+                </div>
+            </div>
+                  
+                  <a href="#product">product</a>
+                  <a href="#deal">deal</a>
+                  <a href="#contact">contact</a>
+              </nav>
+
+              <div class="icons">
+                  <a href="#" class="fas fa-shopping-cart"> </a>
+                  <a href="#" class="fas fa-heart"></a>
+                  <div class="dropdown">
+                  <a href="#" class="fas fa-user-circle"></a>
+                  <div class="dropdown-content">
+                        <a href="{%url 'login' %}">login</a>
+                        <a href="{%url 'signup' %}">register</a>
+                        <a href="#">forgetpass</a>
+                        <a href="#">orders</a>
+                        <a href="#">logout</a>
+
+
+                    </div>
+                </div>
+              </div>
+          </div>
+      </header>
+      <!--contact section starts-->
+
+<section class="contact" id="contact">
+    <h1 class="heading"><span>contact</span> us </h1>
+
+    <form action="">
+            {% csrf_token %}
+        <div class="inputBox">
+        <input type="text" placeholder="name" name="name">
+        <input type="email" placeholder="email" name="email">
+        </div>
+<div class="inputBox">
+    <input type="number" placeholder="number" name="number">
+    <input type="text" placeholder="subject" name="subject">
+    </div>
+    <div class="inputBox">
+            <input type="text" placeholder="address" name="address">
+            </div> 
+     
+
+    <textarea placeholder="message" name="" id="" cols="" rows="" name="message"></textarea>
+
+    <input type="submit" value="send message" class="btn">
+
+    </form>
+</section> 
+
+<!--contact section ends -->
+<!--footer section starts-->
+<footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+    
+    
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+    
+                    </ul>
+                </div>
+    
+                
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">fruits</a></li>
+                        <li><a href="#">vegetables</a></li>
+                        <li><a href="#">chicken & eggs</a></li>
+    
+    
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </footer>
+
+    </body>
+    </html> 

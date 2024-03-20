@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <link rel="stylesheet" href="{% static 'css/index.css'%}">
+
+        <title>farm products |{% block title %}{% endblock title %} </title> 
+        
+
+        <style>
+            /* Style the dropdown button */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            
+            /* Style the dropdown content (hidden by default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: whitesmoke;
+                min-width: 160px;
+                box-shadow: 0 8px 16px 0 rgba(37, 241, 105, 0.2);
+                z-index: 1;
+            }
+            
+            /* Style the links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {
+                background-color:green;
+            }
+            
+            /* Show the dropdown menu on hover */
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="logout.html">logout</a>
+
+      <header>
+          <div class="header-1">
+              <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>EFARM</a>
+
+              <form action="" class="search-box-container">
+                  <input type="search" id="search-box" placeholder="search-here....">
+                <label for="search-box" class="fas fa-search"></label>
+              </form>
+          </div>
+          
+          
+
+          <div class="header-2">
+              <div id="menu-bar" class="fas fa-bars"></div>
+
+
+              <nav class="navbar">
+                  <a href="#home" >home</a>
+
+                  <div class="dropdown">
+                  <a href="#">Category</a>
+                  <div class="dropdown-content">
+                    <a href="{%url 'category'%}">Vegetables</a>
+                    <a href="{%url 'category'%}">Fruits</a>
+                    <a href="{%url 'category'%}">Chicken&Eggs</a>
+                </div>
+            </div>
+                  
+                  <!--<a href="#product">product</a>-->
+                  <a href="#deal">deal</a>
+                  <a href="{%url 'contact' %}">contact</a>
+              </nav>
+
+              <div class="icons">
+                  <a href="#" class="fas fa-shopping-cart">  </a>
+                  <a href="{%url 'payment' %}" class="fas fa-heart"></a>
+                  <a href="#" class="fas fa-user-circle">
+                  </a>
+              </div>
+          </div>
+      </header>
+
+      
+
+
+
+
+
+
+      <!-- home starts here-->
+
+      <section class="home" id="home">
+          <div class="image">
+              <img src="{% static 'images/home.jfif'%}" alt="">
+          </div>
+
+          <div class="content">
+              <span>Fresh and Organic</span>
+              <h3>your daily needed products</h3>
+              <a href="#" class="btn">get started</a>
+          </div>
+
+      </section>
+
+
+      
+      <!--home ends here-->
+
+     <!-- banner section starts-->
+
+     <section class="banner-container">
+         <div class="banner">
+             <img src="{% static 'images/banner-1.jfif'%}" alt="">
+             <div class="content">
+                 <h3>special offer</h3>
+                 <p>upto 45% off</p>
+                 <a href="#" class="btn">check out</a>
+             </div>
+         </div>
+
+         <div class="banner">
+            <img src="{% static 'images/banner-2.jfif'%}" alt="">
+            <div class="content">
+                <h3>limited offer</h3>
+                <p>upto 50% off</p>
+                <a href="#" class="btn">check out</a>
+            </div>
+        </div>
+     </section> -->
+
+     <!-- banner section ends-->
+
+
+     <!--category section starts-->
+
+     <section class="category" id="category">
+         <h1 class="heading">shop by <span>category</span></h1>
+         <div class="box-container">
+             <div class="box">
+                 <h3>vegitables</h3>
+                 <p>upto 50% off</p>
+                 <img src="{% static 'images/category-1.jfif'%}" alt="">
+                 <a href="#" class="btn">shop now</a>
+            </div>
+             <div class="box">
+                    <h3>fruits</h3>
+                    <p>upto 45% off</p>
+                    <img src="{% static 'images/category-2.jfif'%}" alt="">
+                    <a href="#" class="btn">shop now</a>
+                </div>
+                <div class="box">
+                       <h3>meat and eggs</h3>
+                       <p>upto 35% off</p>
+                       <img src="{% static 'images/category-3.jfif'%}" alt="">
+                       <a href="#" class="btn">shop now</a>
+                   </div>
+         </div>
+     </section>
+      
+
+
+     <!--category section ends-->
+
+     <!--product section starts-->
+
+      <section class="product" id="product">
+         <h1 class="heading">latest <span>products</span></h1>
+         <div class="box-container">
+            
+             <div class="box">
+                 <span class="discount">-33%</span>
+                 <div class="icons">
+                     <a href="{% url 'payment' %}" class="fas fa-heart"></a>
+                     <a href="#" class="fas fa-share"></a>
+                     <a href="#" class="fas fa-eye"></a>
+                 </div>
+                 <img src="{% static 'images/product-1.jfif'%}" alt="">
+                 <h3>organic orange</h3>
+                 <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half-alt"></i>
+                 </div>
+                 <div class="price"> Rs.150 of  <span>  Rs.180  </span></div>
+                 <div class="quantity">
+                     <span>quantity : </span>
+                     <input type="number" min="1" max="1000" value="1">
+                     <span> /kg </span>
+                 </div>
+                 <a href="#" class="btn">add to cart</a>
+                </form>
+             </div>
+             <!-- 2nd product -->
+              <div class="box">
+                    <span class="discount">-15%</span>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <img src="{% static 'images/product-2.jfif'%}" alt="">
+                    <h3>organic spinach</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price"> Rs.25 of <span>  Rs.35  </span></div>
+                    <div class="quantity">
+                        <span>quantity : </span>
+                        <input type="number" min="1" max="1000" value="1">
+                        <span> /kg </span>
+                    </div>
+                    <a href="#" class="btn">add to cart</a>
+                    </div> 
+
+               <!--3rd product--> 
+                <div class="box">
+                 <span class="discount">-30%</span>
+                 <div class="icons">
+                     <a href="#" class="fas fa-heart"></a>
+                     <a href="#" class="fas fa-share"></a>
+                     <a href="#" class="fas fa-eye"></a>
+                 </div>
+                 <img src="{% static 'images/product-3.jfif'%}" alt="">
+                 <h3>organic custardapple</h3>
+                 <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half-alt"></i>
+                 </div>
+                 <div class="price"> Rs.180 of <span>  Rs.210  </span></div>
+                 <div class="quantity">
+                     <span>quantity : </span>
+                     <input type="number" min="1" max="1000" value="1">
+                     <span> /kg </span>
+                 </div>
+                 <a href="#" class="btn">add to cart</a>
+                 </div> 
+            <!--4th product-->
+            <div class="box">
+                    <span class="discount">-30%</span>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <img src="{% static 'images/product-4.jfif'%}" alt="">
+                    <h3>organic bellpaper</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price"> Rs.150 of <span>  Rs.190  </span></div>
+                    <div class="quantity">
+                        <span>quantity : </span>
+                        <input type="number" min="1" max="1000" value="1">
+                        <span> /kg </span>
+                    </div>
+                    
+                    <a href="#" class="btn">add to cart</a>
+                    </div> -->
+
+
+              <!--5th product-->
+               <div class="box">
+                    <span class="discount">-40%</span>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <img src="{% static 'images/product-5.jfif'%}" alt="">
+                    <h3>organic pomegranate</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price"> Rs.180 of <span>  Rs.210  </span></div>
+                    <div class="quantity">
+                        <span>quantity : </span>
+                        <input type="number" min="1" max="1000" value="1">
+                        <span> /kg </span>
+                    </div>
+                    <a href="#" class="btn">add to cart</a>
+                    </div> 
+
+
+                <!--6th product-->
+                <div class="box">
+                        <span class="discount">-30%</span>
+                        <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-share"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <img src="{% static 'images/product-6.jfif'%}" alt="">
+                        <h3>chicken</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="price"> Rs.180 of <span>  Rs.210  </span></div>
+                        <div class="quantity">
+                            <span>quantity : </span>
+                            <input type="number" min="1" max="1000" value="1">
+                            <span> /kg </span>
+                        </div>
+                        <a href="#" class="btn">add to cart</a>
+                        </div> 
+
+
+                  <!--7th product-->
+                  <div class="box">
+                        <span class="discount">-30%</span>
+                        <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-share"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <img src="{% static 'images/product-7.jfif'%}" alt="">
+                        <h3>organic onion</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="price"> Rs.180 of <span>  Rs.210  </span></div>
+                        <div class="quantity">
+                            <span>quantity : </span>
+                            <input type="number" min="1" max="1000" value="1">
+                            <span> /kg </span>
+                        </div>
+                        <a href="#" class="btn">add to cart</a>
+                        </div> 
+
+
+                    <!--8th product-->
+                     <div class="box">
+                            <span class="discount">-10%</span>
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart"></a>
+                                <a href="#" class="fas fa-share"></a>
+                                <a href="#" class="fas fa-eye"></a>
+                            </div>
+                            <img src="{% static 'images/product-8.jfif'%}" alt="">
+                            <h3>organic cabbage</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price"> Rs.30 of <span>  Rs.40  </span></div>
+                            <div class="quantity">
+                                <span>quantity : </span>
+                                <input type="number" min="1" max="1000" value="1">
+                                <span> /kg </span>
+                            </div>
+                            
+                            <a href="#" class="btn">add to cart</a>
+                            </div> 
+
+
+                      <!--9th product-->
+                      <div class="box">
+                 <span class="discount">-30%</span>
+                 <div class="icons">
+                     <a href="#" class="fas fa-heart"></a>
+                     <a href="#" class="fas fa-share"></a>
+                     <a href="#" class="fas fa-eye"></a>
+                 </div>
+                 <img src="{% static 'images/product-9.jfif'%}" alt="">
+                 <h3>Eggs</h3>
+                 <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half-alt"></i>
+                 </div>
+                 <div class="price"> Rs.70 of <span>  Rs.100  </span></div>
+                 <div class="quantity">
+                     <span>quantity : </span>
+                     <input type="number" min="1" max="1000" value="1">
+                     <span> dozen </span>
+                 </div>
+    
+                 <a href="#" class="btn">add to cart</a>
+    
+                 </div> 
+<!--1:57-->
+          </div>
+     </section> 
+
+     
+     <!--product section ends-->
+<!--.........................................................................-->
+
+
+<!--deal section start-->
+
+ <section class="deal" id="deal">
+    <div class="content">
+
+        <h3 class="title">deal of the day</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident consequatur quaerat nostrum neque. Provident, error est? Nemo, quis labore eligendi autem quae magni quo enim iure voluptates odit, ad quaerat.</p>
+    
+    <div class="count-down">
+        <div class="box">
+            <h3 id="day">00</h3>
+            <span>day</span>
+        </div>
+        <div class="box">
+            <h3 id="hour">00</h3>
+            <span>hour</span>
+        </div>
+        <div class="box">
+            <h3 id="minute">00</h3>
+            <span>minute</span>
+        </div>
+        <div class="box">
+            <h3 id="seconds">00</h3>
+            <span>seconds</span>
+        </div>
+    </div>
+    <a href="#" class="btn">check the deals</a>
+    
+    </div>
+
+</section> -->
+<!--deal section end-->
+
+
+<!--contact section starts-->
+
+<section class="contact" id="contact">
+    <h1 class="heading"><span>contact</span> us </h1>
+
+    <form action="">
+        <div class="inputBox">
+        <input type="text" placeholder="name">
+        <input type="email" placeholder="email">
+        </div>
+<div class="inputBox">
+    <input type="number" placeholder="number">
+    <input type="text" placeholder="subject">
+    </div>
+
+    <textarea placeholder="message" name="" id="" cols="" rows=""></textarea>
+
+    <input type="submit" value="send message" class="btn">
+
+    </form>
+</section>-->
+<!--contact section ends -->
+
+<!--footer section starts-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+
+                </ul>
+            </div>
+
+            
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">fruits</a></li>
+                    <li><a href="#">vegetables</a></li>
+                    <li><a href="#">chicken & eggs</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!--footer section ends-->
+
+ 
+
+
+   
+
+
+
+
+    
+
+<!--<script src="{% static 'js/home.js'%}"></script>-->
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+<!--1:15min slug-->
